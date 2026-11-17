@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · ForexTradingBot C2 Mail Bridge</title>
+<style>body{font-family:"Source Sans 3",system-ui,sans-serif;max-width:48rem;margin:3rem auto;padding:0 1.25rem;line-height:1.65;color:#17212b;background:#fff}nav{display:flex;gap:1.5rem;flex-wrap:wrap}a{color:#174f93}h1{line-height:1.2}h2{margin-top:2rem}footer{margin-top:3rem;border-top:1px solid #ccd3db;padding-top:1rem;font-size:.9rem}</style>
+</head>
+<body>
+<nav aria-label="Main"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<main>
+<h1>Privacy policy</h1>
+<p>This policy describes the Gmail integration being qualified for the privately operated ForexTradingBot C2 Mail Bridge. The operator is the owner of the dedicated mailbox. Contact <a href="mailto:forextradingbot.c2@gmail.com">forextradingbot.c2@gmail.com</a> for questions, access revocation, or data deletion requests.</p>
+<h2>Purpose and Google permissions</h2>
+<p>The application processes subscribed official Federal Reserve Board email notifications for the owner's private news monitoring, provenance checks, historical record, and local analysis. Its IMAP connection requires Google's <code>https://mail.google.com/</code> OAuth scope, which permits reading, composing, sending, and permanent deletion of Gmail messages. The implemented connector reads messages, applies its delivery label, and supports an isolated synthetic-message qualification test. The connector's operational permissions are further limited by its local configuration and owner grants.</p>
+<h2>Data accessed and recorded</h2>
+<p>The connector accesses message bodies and authentication headers to validate origin and identify official news links. It processes messages of at most 128 KiB. A normalized receipt contains the subject-derived title, canonical official URL, available UTC timestamps, provenance status, a message hash, and a hashed message identifier. Attachments are excluded from news extraction.</p>
+<p>Raw message bodies and full authentication headers are processed transiently by this connector. They are not included in its normalized cloud export. Original messages remain in Gmail under the owner's mailbox settings. Parsing rejections record sanitized reason codes and message identity hashes.</p>
+<h2>Processing and storage</h2>
+<p>Google stores and delivers the original email. The owner's existing Oracle Cloud Infrastructure helper stores the normalized receipts in the existing C2 database and exports them through a private Object Storage bridge to the owner's Windows system. The local system records receipt and processing times and presents the event in the owner's news dashboard. These are the owner's controlled processing locations.</p>
+<p>OAuth refresh tokens and client configuration are stored separately for the cloud and Windows hosts. Windows refresh-token storage uses DPAPI CurrentUser. Cloud token files use owner-only permissions. Network connections use TLS or the existing authenticated encrypted transport. Credentials are excluded from project source control, public pages, and project handoffs.</p>
+<h2>Retention and owner control</h2>
+<p>Normalized news and deduplication receipts are retained for the owner's private historical database and operational audit while that purpose continues. The operator handles data deletion requests under the project's retention and recovery procedures. Google authorization can be revoked in the owner's Google Account. Revocation stops further authorized mailbox access and does not itself delete previously recorded receipts or original Gmail messages.</p>
+<h2>Use and sharing</h2>
+<p>Google user data is used for the described owner-requested monitoring and analysis. It is not sold, used for advertising, or used to train generalized artificial intelligence models. Any additional transfer or purpose requires the owner's authorization and compliance with Google policy.</p>
+<p>Use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+<h2>This information site</h2>
+<p>These static pages contain no application cookies, analytics scripts, login form, or tracking pixels. If published through GitHub Pages, GitHub processes hosting access information, including visitor IP addresses, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+</main>
+<footer>ForexTradingBot C2 Mail Bridge · Updated 17 November 2026</footer>
+</body>
+</html>
